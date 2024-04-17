@@ -1,0 +1,115 @@
+<!-- Aim: Write a program for validation of a form using Angularjs. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Myapps</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https:/ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app>
+  <h1>Try leaving the first input field blank</h1>
+  <form name="myForm">
+    <p>
+    Name: <input type="text" name="myname" ng-model="myname" required>
+    <span style="color: red;" ng-show="myForm.myname.$touched && myForm.myname.$invalid">Name is required</span>
+    </p>
+    <p>
+      Address: <input type="text" name="myAddress" ng-model="myAddress" required>
+      <span style="color: red;" ng-show="myForm.myAddress.$touched && myForm.myAddress.$invalid">Address is required</span>
+    </p>  
+  </form>
+</body>
+</html>
+_____________________________________________________________________
+
+<!-- Aim: Write a program to create and implement modules and controllers in Angularjs. -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Myapps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="myCtrl">
+  <div>
+    First Name: <input type="text" ng-model="firstName"> <br> <br>
+    Last Name: <input type="text" ng-model="lastName"> <br>
+    <p> {{fullNameFun()}} </p>
+  </div>
+
+  <script>
+    const app = angular.module('myapp', []);
+    app.controller('myCtrl', ($scope) => {
+      $scope.firstName = "Roshan";
+      $scope.lastName = "Rai";
+      $scope.fullNameFun = () => {
+        return $scope.firstName + " " + $scope.lastName;
+      }
+    });
+  </script>
+</body>
+
+_________________________________________________________
+
+
+<!-- Aim: Write a program to implement error handling in angular.js  -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Myapps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myShoppingList" ng-controller="myCtrl">
+  <div>
+    <ul>
+      <li class="cut" ng-repeat="x in products"> {{x}} 
+        <span class="cut1" ng-click="removeItem($index)">x</span>
+       </li>
+    </ul>
+    <input ng-model="addMe">
+    <button ng-click="addItems()" >Add item</button>
+    <p> {{errorText}} </p>
+  </div>
+
+  <script>
+    const app = angular.module('myShoppingList', []);
+    app.controller('myCtrl', ($scope) => {
+      $scope.products = [];
+      $scope.addItems = () => {
+        $scope.errorText = "";
+        if(!$scope.addMe) {return;}
+        if($scope.products.indexOf($scope.addMe) == -1){
+          $scope.products.push($scope.addMe);
+        }
+        else{
+          $scope.errorText = "The item is already in your shopping list";
+        }
+      }
+      $scope.removeItem = function(x){
+        $scope.errorText = "";
+        $scope.products.splice(x,1);
+      }
+    })
+  </script>
+</body>
+
+</html>
+
+________________________________________________________
+

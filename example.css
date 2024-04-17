@@ -1,0 +1,21 @@
+#main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 80vw;
+    margin: 30px auto;
+}
+
+.content {
+  font-family: 'Fira Code';
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+  border-radius: 5px; 
+  background-color: #e6e6e6;
+  white-space: pre-wrap;
+}
+
