@@ -1,0 +1,1794 @@
+// Practical 1 (A)
+// Aim: Write a program using Kotlin to implement control structures and loops.
+
+// First.kt
+
+fun main() {
+    print("for(i in 1..5)print(i)=")
+    for (i in 1..5) print(i)
+    println()
+    
+    print("for(i in 5..1)print(i)=")
+    for (i in 5..1) print(i)
+    println()
+    
+    print("for(i in 5 downTo 1)print(i)=")
+    for (i in 5 downTo 1) print(i)
+    println()
+    
+    print("for(i in 1..5 step 2)print(i)=")
+    for (i in 1..5 step 2) print(i)
+    println()
+    
+    print("for(i in 5 downTo 1 step 2)print(i)=")
+    for (i in 5 downTo 1 step 2) print(i)
+}
+
+
+// Practical 1 (B)
+// Aim: Write a program to implement object-oriented concepts in Kotlin.
+
+// Second.kt
+
+class Car {
+    var brand = ""
+    var model = ""
+    var year = ""
+}
+
+fun main() {
+    val c1 = Car()
+    c1.brand = "Ford"
+    c1.model = "Mustang"
+    c1.year = "1969"
+    
+    println(c1.brand)
+    println(c1.model)
+    println(c1.year)
+}
+
+__________________________________________________________________
+
+<!-- Practical 2 (A) -->
+<!-- Aim: Create an Android Application to design screens using different layouts and UI components. -->
+
+<!-- activity_main.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:id="@+id/_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="25dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+        
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:text="@string/student_details"
+            android:textColor="#6dffbf"
+            android:textSize="25sp" />
+            
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="16dp"
+            android:hint="@string/name_of_the_student"
+            android:inputType="text" 
+            android:text="@string/name"
+            android:textAlignment="center"
+            android:textColor="#6bfff7"
+            android:textColorHint="#52afaa" />
+            
+        <EditText
+            android:id="@+id/Roll_No"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="16dp"
+            android:hint="@string/roll_no"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColorHint="#52afaa" />
+            
+        <RadioGroup
+            android:id="@+id/Radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:text="@string/select_class"
+                android:textColor="#6dffbf"
+                android:textSize="15sp" />
+                
+            <RadioButton
+                android:id="@+id/Radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="radio_button_click"
+                android:padding="16dp"
+                android:text="@string/fy"
+                android:textColor="@color/design_default_color_secondary"
+                tools:ignore="UsingOnClickInXml" />
+                
+            <RadioButton
+                android:id="@+id/Radio1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="radio_button_click"
+                android:padding="16dp"
+                android:text="@string/sy"
+                android:textColor="@color/design_default_color_secondary"
+                tools:ignore="UsingOnClickInXml" />
+                
+            <RadioButton
+                android:id="@+id/Radio2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="radio_button_click"
+                android:padding="16dp"
+                android:text="@string/ty"
+                android:textColor="@color/design_default_color_secondary"
+                tools:ignore="UsingOnClickInXml" />
+                
+        </RadioGroup>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="25dp">
+            
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/reset"
+                android:textAllCaps="false" />
+                
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/submit"
+                android:textAllCaps="false" />
+                
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+</LinearLayout>
+
+// MainActivity.kt
+
+package com.example.prac2a
+
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        var edit_name = findViewById(R.id.edit_name) as EditText
+        var rollno = findViewById(R.id.Roll_No) as EditText
+        var btn_reset = findViewById(R.id.btn_reset) as Button
+        var btn_submit = findViewById(R.id.btn_submit) as Button
+
+        btn_reset.setOnClickListener{
+            edit_name.setText("")
+            rollno.setText("")
+        }
+
+        btn_submit.setOnClickListener{
+            val stud_name=edit_name.text;
+            val rollno=rollno.text;
+            Toast.makeText(this@MainActivity,stud_name,Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun radio_button_click(view: View) {}
+}
+
+
+<!-- Strings.xml -->
+
+<resources>
+    <string name="app_name">UI</string>
+    <string name="checked">checked</string>
+    <string name="unchecked">unchecked</string>
+    <string name="student_details">STUDENT DETAILS</string>
+    <string name="name_of_the_student">Name Of the Student</string>
+    <string name="name">Name</string>
+    <string name="roll_no">Roll No</string>
+    <string name="select_class">SELECT CLASS</string>
+    <string name="fy">FY</string>
+    <string name="sy">SY</string>
+    <string name="ty">TY</string>
+    <string name="reset">Reset</string>
+    <string name="submit">Submit</string>
+</resources>
+
+
+__________________________________________________________________
+
+
+<!-- Practical 2 -->
+<!-- (B) -->
+<!-- Aim: Write an android application demonstrating response to event/user interaction for a.CheckBox b.RadioButton c.Button d.Spinner -->
+<!-- activity_main.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#444"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingBottom="30dp"
+            android:text="Registration Form"
+            android:textColor="#6dffbf"
+            android:textSize="25dp" /> 
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your Name"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="#6bfff7"
+            android:textColorHint="#52afaa" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" android:text="Select Gender"
+                android:textColor="#6dffbf"
+                android:textSize="20dp"
+                tools:textAlignment="center" />
+
+            <RadioButton
+                android:id="@+id/radio_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="radio_button_click"
+                android:text="Male"
+                android:padding="16dp"
+                android:textColor="@color/design_default_color_secondary"/>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="radio_button_click" android:text="Female"
+                android:padding="16dp"
+                android:textColor="@color/design_default_color_secondary"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Hobbies"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#6dffbf"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/chk1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/checkbox1_text"
+            android:textColor="#6dffbf"
+            android:textSize="18dp" /> 
+
+        <CheckBox
+            android:id="@+id/chk2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/checkbox2_text"
+            android:textColor="#6dffbf"
+            android:textSize="18dp" />
+
+        <CheckBox
+            android:id="@+id/chk3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/checkbox_text"
+            android:textColor="#6dffbf"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="City"
+            android:textColor="#6dffbf"
+            android:textSize="20dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="377dp"
+            android:layout_height="57dp"
+            android:layout_centerInParent="true" 
+            android:dropDownWidth="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="Reset"
+                android:textAllCaps="true" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="Submit"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+
+
+// MainActivity.kt
+
+package com.example.prac2b
+
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.*
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    @SuppressLint("ResourceType")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        var edit_name = findViewById(R.id.edit_name) as EditText
+        val city = resources.getStringArray(R.array.city)
+        val radioGroup=findViewById(R.id.radio_group) as RadioGroup
+        val chk1=findViewById(R.id.chk1) as CheckBox
+        val chk2=findViewById(R.id.chk1) as CheckBox
+        val chk3=findViewById(R.id.chk1) as CheckBox
+        var btn_reset = findViewById(R.id.btn_reset) as Button
+        var btn_submit = findViewById(R.id.btn_submit) as Button
+        val spinner = findViewById<Spinner>(R.id.spinner)
+
+        if (spinner != null) {
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item, city
+            )
+            spinner.adapter = adapter
+            spinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected( parent:
+                    AdapterView<*>, view: View,
+                    position: Int, id: Long
+                ) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.array) + " " +
+                        "" + city[position], Toast.LENGTH_SHORT
+                    ).show()
+                }
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // write code to perform some action
+                }
+            }
+        }
+
+        btn_submit.setOnClickListener {
+            Toast.makeText(
+                applicationContext,
+                "Your response has been recorded", Toast.LENGTH_LONG
+            ).show()
+        } 
+
+        btn_reset.setOnClickListener {
+            // clearing name edit text views on reset button click
+            edit_name.setText("") 
+            radioGroup.clearCheck()
+            if (chk1.isChecked()){ 
+                chk1.setChecked(false)
+            }
+            if (chk2.isChecked()){ 
+                chk2.setChecked(false)
+            }
+            if (chk3.isChecked()){ 
+                chk3.setChecked(false)
+            }
+            spinner.setSelection(0)
+        }
+    }
+
+    fun radio_button_click(view: View) {
+        val radio: RadioButton = findViewById(radio_group.checkedRadioButtonId)
+        Toast.makeText(
+            applicationContext, "On click : ${radio.text}",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+}
+
+
+<!-- Strings.xml -->
+
+<resources>
+    <string name="app_name">UI</string>
+    <string name="checked">checked</string>
+    <string name="unchecked">unchecked</string>
+    <!-- Added for proper working of the code. -->
+    <string name="checkbox1_text">Sports</string>
+    <string name="checkbox2_text">Music</string>
+    <string name="checkbox_text">Reading</string>
+    <string name="array">Selected City is</string>
+</resources>
+
+<!-- arrays.xml -->
+
+<resources>
+    <string-array name="city">
+        <item>Mumbai</item>
+        <item>Pune</item>
+        <item>Nashik</item>
+        <item>Thane</item>
+        <item>Nagpur</item>
+    </string-array>
+</resources>
+
+
+________________________________________________________________________
+
+
+<!-- Practical 3 -->
+<!-- (A) -->
+<!-- Aim: Create an application to create an Image Flipper and Image Gallery. On click on the image display the information about the image. -->
+<!-- activity_main.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity">
+
+    <ViewFlipper
+        android:id="@+id/idViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/idLLBtn"
+        android:inAnimation="@android:anim/slide_out_right"
+        android:outAnimation="@android:anim/slide_in_left">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/sunset"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="Welcome to Android App Development Course"
+            android:textAlignment="center"
+            android:textColor="@color/purple_200"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/idBtnViewcourse"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:padding="4dp"
+            android:text="View Course"
+            android:textAllCaps="false"/>
+
+    </ViewFlipper>
+
+    <LinearLayout
+        android:id="@+id/idLLBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/idBtnPrev"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Previous"
+            android:textAllCaps="false"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <Button
+            android:id="@+id/idBtnNext"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Next"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+// MainActivity.kt
+
+package com.example.imageflipper
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
+import android.widget.ViewFlipper
+
+class MainActivity : AppCompatActivity() {
+    lateinit var viewFlipper: ViewFlipper
+    lateinit var prevBtn:Button
+    lateinit var nextBtn:Button
+    lateinit var visitCourseBtn:Button
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        viewFlipper=findViewById(R.id.idViewFlipper)
+        prevBtn=findViewById(R.id.idBtnPrev)
+        nextBtn=findViewById(R.id.idBtnNext)
+        visitCourseBtn=findViewById(R.id.idBtnViewcourse)
+
+        visitCourseBtn.setOnClickListener {
+            val openCourse = Intent(android.content.Intent.ACTION_VIEW)
+            openCourse.data=Uri.parse("https://www.geeksforgeeks.org/android-tutorial")
+            startActivity(openCourse)
+        }
+
+        prevBtn.setOnClickListener {
+            viewFlipper.showPrevious()
+        }
+
+        nextBtn.setOnClickListener {
+            viewFlipper.showNext()
+        }
+    }
+}
+
+<!-- strings.xml -->
+
+<resources>
+    <string name="app_name">ImageFlipper</string>
+    <string name="checked">checked</string>
+    <string name="unchecked">unchecked</string>
+</resources>
+
+__________________________________________________________________
+
+<!-- Practical 3 (B) -->
+<!-- Aim: Create an application to use GridView for shopping cart application. -->
+<!-- activity_main.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <GridView
+        android:id="@+id/idGRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="6dp"
+        android:numColumns="2"
+        android:verticalSpacing="6dp" />
+
+</RelativeLayout>
+
+<!-- gridview_item.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-216dp">
+
+        <ImageView
+            android:id="@+id/idIVmob"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:contentDescription=""
+            android:padding="4dp"
+            android:src="@drawable/shopping">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/idTVmob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!-- GridViewModal.kt -->
+
+package com.example.shoppingcart
+
+data class GridViewModal (
+    val mobname: String,
+    val mobimg: Int
+)
+
+
+<!-- GridRVAdapter.kt -->
+
+package com.example.shoppingcart
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.TextView
+
+internal class GridRVAdapter(
+    private val mobList: List<GridViewModal>,
+    private val context: Context
+) : BaseAdapter() {
+
+    private var layoutInflater: LayoutInflater? = null
+    private lateinit var mobTV: TextView
+    private lateinit var mobIV: ImageView
+
+    override fun getCount(): Int {
+        return mobList.size
+    }
+
+    override fun getItem(position: Int): Any? {
+        return null
+    }
+
+    override fun getItemId(position: Int): Long {
+        return 0
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+        var convertView = convertView
+        if (layoutInflater == null) {
+            layoutInflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        }
+        if (convertView == null) {
+            convertView = layoutInflater!!.inflate(R.layout.gridview_item, null)
+        }
+        mobIV = convertView!!.findViewById(R.id.idIVmob)
+        mobTV = convertView!!.findViewById(R.id.idTVmob)
+        mobIV.setImageResource(mobList[position].mobimg)
+        mobTV.text = mobList[position].mobname
+        return convertView
+    }
+}
+
+
+<!-- MainActivity.kt -->
+
+package com.example.shoppingcart
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.AdapterView
+import android.widget.GridView
+import android.widget.Toast
+import kotlin.collections.ArrayList
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var mobGRV: GridView
+    lateinit var mobList: List<GridViewModal>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        mobGRV = findViewById(R.id.idGRV)
+        mobList = ArrayList<GridViewModal>()
+        mobList = mobList + GridViewModal("Apple", R.drawable.apple)
+        mobList = mobList + GridViewModal("Moto", R.drawable.moto)
+        mobList = mobList + GridViewModal("Vivo", R.drawable.vivo)
+        mobList = mobList + GridViewModal("Oppo", R.drawable.oppo)
+        mobList = mobList + GridViewModal("Samsung", R.drawable.samsung)
+
+        val courseAdapter = GridRVAdapter(mobList = mobList, this@MainActivity)
+        mobGRV.adapter = courseAdapter
+
+        mobGRV.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, position, _ ->
+                Toast.makeText(
+                    applicationContext,
+                    "${mobList[position].mobname} selected",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+    }
+}
+
+__________________________________________________________________
+
+
+
+Practical 4 (A)
+Aim: Create an Android application to demonstrate implicit intent.
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your First Activity"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.172"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click to invoke intent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.77"/>
+
+</RelativeLayout>
+
+<!-- MainActivity.kt -->
+
+package com.example.prac4a
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.net.Uri
+import android.content.Intent
+import android.widget.Button
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.button)
+
+        button.setOnClickListener(){
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.android.com/")
+            startActivity(intent)
+        }
+    }
+}
+
+__________________________________________________________________
+
+
+<!--
+Practical 4(B)
+Aim: Create an Android application to demonstrate explicit intent.
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to home screen"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to new screen"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!-- MainActivity.kt -->
+package com.example.explicitcontent
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.content.Intent
+import android.widget.Button
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val button=findViewById<Button>(R.id.btn1)
+
+        button.setOnClickListener {
+            val i=Intent(applicationContext,MainActivity2::class.java)
+            startActivity(i)
+        }
+    }
+}
+
+<!--
+activity_main2.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to new screen"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to home screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- MainActivity2.kt --> 
+package com.example.explicitcontent
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.content.Intent
+
+class MainActivity2 : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main2)
+
+        val button=findViewById<Button>(R.id.btn2)
+
+        button.setOnClickListener {
+            val i = Intent(applicationContext, MainActivity::class.java)
+            startActivity(i)
+        }
+    }
+}
+
+__________________________________________________________________
+
+<!--
+Practical 5
+Aim: Create an Android application to demonstrate the use of Broadcast listeners and services.
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="MainActivity">
+
+    <Button
+        android:id="@+id/checkInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/cardview_dark_background"
+        android:text="Check Connection"
+        android:textColor="#fff" />
+
+</RelativeLayout>
+
+
+<!--
+AndroidManifest.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.broadcast">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Broadcast"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+
+/*
+AppStatus.kt
+*/
+
+package com.example.broadcast
+
+import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
+import android.util.Log
+import java.lang.Exception
+
+class AppStatus {
+    internal lateinit var connectivityManager: ConnectivityManager
+    internal var wifiInfo: NetworkInfo? = null
+    internal var mobileInfo: NetworkInfo? = null
+    internal var connected = false
+
+    val isOnline: Boolean
+        @SuppressLint("MissingPermission")
+        get() {
+            try {
+                connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+                val networkInfo = connectivityManager.activeNetworkInfo
+                connected = networkInfo != null && networkInfo.isAvailable &&
+                        networkInfo.isConnected
+                return connected
+            } catch (e: Exception) {
+                Log.v("connectivity", e.toString())
+            }
+            return connected
+        }
+
+    companion object {
+        internal lateinit var context: Context
+        private val instance = AppStatus()
+
+        fun getInstance(ctx: Context): AppStatus {
+            context = ctx.applicationContext
+            return instance
+        }
+    }
+}
+
+
+/*
+MainActivity.kt
+*/
+
+package com.example.broadcast
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.checkInternet)
+
+        button.setOnClickListener(View.OnClickListener {
+            if (AppStatus.getInstance(applicationContext).isOnline) {
+                Toast.makeText(
+                    applicationContext,
+                    "Wifi/Mobile Networks Connected!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    applicationContext, "Ooops! No Wifi/Mobile Networks connected!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+    }
+}
+
+__________________________________________________________________
+
+<!--
+Practical 6
+Aim: Create an android application to use XML based animation.
+Activity_main.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:padding="10dp"
+        android:src="@drawable/sh2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/fade_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Fade In"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/fade_out"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Fade Out"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/zoom_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Zoom In"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/zoom_out"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Zoom Out"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/slide_down"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Slide down"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/slide_up"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Slide up"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/bounce"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Bounce"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/rotate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Rotate"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+<!--
+Bounce.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:fillAfter="true">
+
+    <translate
+        android:fromYDelta="100%"
+        android:toYDelta="-20"
+        android:duration="300" />
+
+    <translate
+        android:startOffset="500"
+        android:fromYDelta="-20"
+        android:toYDelta="10%"
+        android:duration="150" />
+
+    <translate
+        android:startOffset="1000"
+        android:fromYDelta="10"
+        android:toYDelta="0"
+        android:duration="100" />
+</set>
+
+<!--
+Fade_in.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator">
+
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0" />
+</set>
+
+<!--
+Fade_out.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator">
+
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0" />
+</set>
+
+<!--
+Rotate.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:fromDegrees="0"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:startOffset="0"
+    android:toDegrees="360" />
+
+<!--
+Zoom_in.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+
+    <scale
+        android:duration="1000"
+        android:fromXScale="1"
+        android:fromYScale="1"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.5"
+        android:toYScale="1.5" />
+</set>
+
+<!--
+Zoom_out.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+
+    <scale
+        android:duration="1000"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.5"
+        android:toYScale="0.5" />
+</set>
+
+<!--
+Slide_down.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate
+        android:duration="1000"
+        android:fromYDelta="-100%"
+        android:toYDelta="0" />
+</set>
+
+
+<!--
+Slide_up.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate
+        android:duration="1000"
+        android:fromYDelta="0"
+        android:toYDelta="-100" />
+</set>
+
+
+/*
+MainActivity.kt
+*/
+
+package com.example.prac6
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.view.animation.AnimationUtils
+import android.widget.Button
+import android.widget.ImageView
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val fade_in = findViewById<Button>(R.id.fade_in)
+        val image = findViewById<ImageView>(R.id.image)
+        val fade_out = findViewById<Button>(R.id.fade_out)
+        val zoom_in = findViewById<Button>(R.id.zoom_in)
+        val zoom_out = findViewById<Button>(R.id.zoom_out)
+        val slide_up = findViewById<Button>(R.id.slide_up)
+        val slide_down = findViewById<Button>(R.id.slide_down)
+        val rotate = findViewById<Button>(R.id.rotate)
+        val bounce = findViewById<Button>(R.id.bounce)
+
+        fade_in.setOnClickListener {
+            image.visibility = View.VISIBLE
+            val animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            image.startAnimation(animationFadeIn)
+        }
+
+        fade_out.setOnClickListener {
+            val animationFadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+            image.startAnimation(animationFadeOut)
+            Handler().postDelayed({
+                image.visibility = View.GONE
+            }, 1000)
+        }
+
+        zoom_in.setOnClickListener {
+            val animationZoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in)
+            image.startAnimation(animationZoomIn)
+        }
+
+        zoom_out.setOnClickListener {
+            val animationZoomOut = AnimationUtils.loadAnimation(this, R.anim.zoom_out)
+            image.startAnimation(animationZoomOut)
+        }
+
+        slide_down.setOnClickListener {
+            val animationSlideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down)
+            image.startAnimation(animationSlideDown)
+        }
+
+        slide_up.setOnClickListener {
+            val animationSlideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up)
+            image.startAnimation(animationSlideUp)
+        }
+
+        bounce.setOnClickListener {
+            val animationBounce = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            image.startAnimation(animationBounce)
+        }
+
+        rotate.setOnClickListener {
+            val animationRotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
+            image.startAnimation(animationRotate)
+        }
+    }
+}
+
+__________________________________________________________________________
+
+<!--
+Practical 7
+Aim: Create a media player application in android that plays audio.
+Implement play, pause, and stop features.
+activity_main.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/headingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIA PLAYER"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingText"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="STOP"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="PLAY"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="PAUSE"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</RelativeLayout>
+
+
+/*
+MainActivity.kt
+*/
+
+package com.example.mediaplayer
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.media.MediaPlayer
+import android.widget.Button
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(applicationContext, R.raw.apple)
+        val bPlay: Button = findViewById(R.id.playButton)
+        val bPause: Button = findViewById(R.id.pauseButton)
+        val bStop: Button = findViewById(R.id.stopButton)
+
+        bPlay.setOnClickListener {
+            mediaPlayer.start()
+            Toast.makeText(this@MainActivity, "STARTED", Toast.LENGTH_LONG).show()
+        }
+
+        bPause.setOnClickListener {
+            mediaPlayer.pause()
+            Toast.makeText(this@MainActivity, "PAUSED", Toast.LENGTH_LONG).show()
+        }
+
+        bStop.setOnClickListener {
+            mediaPlayer.stop()
+            mediaPlayer.prepare()
+            Toast.makeText(this@MainActivity, "STOPPED", Toast.LENGTH_LONG).show()
+        }
+    }
+}
+
+
+__________________________________________________________________________
+
+<!--
+Practical 8 (A)
+Aim: Create an application to demonstrate the different types of menus (A) Option Menu
+activity_main.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+Menu.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/overflowMenu"
+        android:icon="@drawable/dots"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/setting"
+                android:icon="@drawable/setting"
+                android:title="SETTINGS"
+                app:showAsAction="ifRoom|withText" />
+
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/about"
+                android:title="ABOUT"
+                app:showAsAction="ifRoom|withText" />
+
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/exit"
+                android:title="EXIT"
+                app:showAsAction="ifRoom|withText" />
+        </menu>
+    </item>
+</menu>
+
+
+/*
+MainActivity.kt
+*/
+
+package com.example.optionmenu
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.about -> Toast.makeText(this, "About Selected", Toast.LENGTH_SHORT).show()
+            R.id.setting -> Toast.makeText(this, "Setting Selected", Toast.LENGTH_SHORT).show()
+            R.id.exit -> Toast.makeText(this, "Exit Selected", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}
+
+___________________________________________________________________________________
+
+
+<!--
+Practical 8 (B)
+Pop-up Menu
+activity_main.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+Menu.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_crick"
+        android:title="@string/cricket"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_ftbal"
+        android:title="@string/football"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_hockey"
+        android:title="@string/hockey"
+        app:showAsAction="never" />
+
+</menu>
+
+
+/*
+MainActivity.kt
+*/
+
+package com.example.popmenu
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.PopupMenu
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            val popupMenu = PopupMenu(this, button)
+            popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.action_crick -> Toast.makeText(this@MainActivity, "You Clicked: ${item.title}", Toast.LENGTH_SHORT).show()
+                    R.id.action_ftbal -> Toast.makeText(this@MainActivity, "You Clicked: ${item.title}", Toast.LENGTH_SHORT).show()
+                    R.id.action_hockey -> Toast.makeText(this@MainActivity, "You Clicked: ${item.title}", Toast.LENGTH_SHORT).show()
+                }
+                true
+            }
+            popupMenu.show()
+        }
+    }
+}
+
+
+
+
+
