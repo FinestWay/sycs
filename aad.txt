@@ -1,4 +1,133 @@
-Practical: 3
+Practical 1:-
+
+(1) Open MongoDB Compass: Search for MongoDB Compass in your applications or use your preferred method to open it.
+
+(2) Connect to MongoDB Instance:
+Click on "Connect" to connect to your MongoDB instance.
+Enter the connection details like hostname, port, username, and password if required. If MongoDB is running on your local machine, the default settings should work.
+
+(3) Create a Database & Collection:
+After connecting, you'll see an option to create a new database. Click on it.
+Enter the name of the database as "university" and click "Create Database".
+Inside the "university" database, you'll see an option to add a new collection. Click on it.
+Enter the name of the collection as "students" and click "Create Collection".
+
+(4) Insert Document:
+Now, select the "students" collection.
+Click on the "Documents" tab.
+Click on "Insert Document".
+Copy the following JSON document and paste it into the editor:
+json
+
+Copy code :-
+
+{
+    "id": ObjectId("65hdgeolsebee996695058295"),
+    "name": {
+        "fn": "Srohit",
+        "mn": "babi",
+        "ln": "desai"
+    },
+    "address": {
+        "city": "mumbai",
+        "state": "Maharashtra",
+        "country": "India"
+    },
+    "course": "Computer-science"
+}
+Click "Insert" to add the document to the collection.
+
+________________________________________________________________________
+
+
+Practical 2:-
+use vcollege
+
+Add Collections:
+Copy code:-
+
+db.createCollection("test")
+db.createCollection("tl")
+
+Insert Documents:-
+Insert a document into the "test" collection:
+Copy code:-
+
+db.test.insertOne({
+    "rollno": 17,
+    "name": "rohit",
+    "course": "sycs",
+    "div": "A"
+})
+
+Insert multiple documents into the "tl" collection:
+Copy code:-
+
+db.tl.insertMany([
+    {"rollno": 1, "name": "yash", "course": "sycs", "div": "A"},
+    {"rollno": 2, "name": "Prince", "course": "Syit", "div": "B"},
+    {"rollno": 3, "name": "Jignesh", "course": "Sycs", "div": "C"},
+    {"rollno": 4, "name": "Pratik", "course": "Sybio", "div": "D"}
+])
+
+Read:
+Find Documents:
+To find all documents in the "test" collection:
+Copy code:
+db.test.find()
+
+To find all documents in the "tl" collection:
+Copy code:
+
+db.tl.find()
+
+Find One Document:
+To find one document in the "test" collection:
+Copy code:
+
+db.test.findOne()
+
+To find one document in the "tl" collection based on a specific condition (e.g., rollno: 43):
+Copy code:-
+
+db.tl.findOne({ "rollno": 43 })
+
+Update:
+Update Document:
+To update a document in the "test" collection:
+Copy code:-
+
+db.test.updateOne(
+    { "rollno": 17 },
+    { $set: { "name": "updated_name" } }
+)
+
+To update a document in the "tl" collection based on a specific condition:
+Copy code:-
+
+db.tl.updateOne(
+    { "rollno": 1 },
+    { $set: { "name": "updated_name" } }
+)
+
+Delete:
+Delete Document:
+To delete a document from the "test" collection:
+Copy code:-
+
+db.test.deleteOne({ "rollno": 17 })
+
+To delete a document from the "tl" collection based on a specific condition:
+Copy code:-
+
+db.tl.deleteOne({ "rollno": 1 })
+
+
+______________________________________________________________________________
+
+
+
+Practical: 3:-
 <!-- Aim: Write a program for validation of a form using Angularjs. -->
 
 <!doctype html>
@@ -29,7 +158,7 @@ _____________________________________________________________________
 
 
 
-Practical 4
+Practical 4:-
 <!-- Aim: Write a program to create and implement modules and controllers in Angularjs. -->
 
 <!doctype html>
@@ -53,8 +182,8 @@ Practical 4
   <script>
     const app = angular.module('myapp', []);
     app.controller('myCtrl', ($scope) => {
-      $scope.firstName = "Roshan";
-      $scope.lastName = "Rai";
+      $scope.firstName = "Nitesh";
+      $scope.lastName = "Yadav";
       $scope.fullNameFun = () => {
         return $scope.firstName + " " + $scope.lastName;
       }
@@ -65,7 +194,8 @@ Practical 4
 _________________________________________________________
 
 
-Practical 5
+
+Practical 5:-
 <!-- Aim: Write a program to implement error handling in angular.js  -->
 
 <!doctype html>
@@ -118,7 +248,8 @@ Practical 5
 
 _____________________________________________________________________
 
-Practical 6
+
+Practical 6:-
 
 <!DOCTYPE html>
 <html>
@@ -169,7 +300,8 @@ Practical 6
 
 ________________________________________________________________________
 
-Practical 7
+
+Practical 7:-
 
 <!-- server.js -->
 const express = require('express');
@@ -201,7 +333,8 @@ app.listen(PORT, () => {
 
 ______________________________________________________________________________
 
-Practical 8
+
+Practical 8:-
 
 <!DOCTYPE html>
 <html>
@@ -232,7 +365,7 @@ Practical 8
 
 ________________________________________________________________________________
 
-Practical 9
+Practical 9:-
 
 import 'package:flutter/material.dart';
 
