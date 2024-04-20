@@ -31,3 +31,43 @@ a{
 #li{
   text-align: center;
 }
+
+h1{
+  font-weight: 900;
+}
+
+.line{
+  height: 8px;
+  width: 100%;
+  color: rgb(167, 167, 167);
+}
+
+li{
+    list-style-type: none ;
+}
+
+li a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.content {
+  font-family: 'Fira Code';
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+  border-radius: 5px; 
+  background-color: #e6e6e6;
+  white-space: pre-wrap;
+}
+
+#images{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
