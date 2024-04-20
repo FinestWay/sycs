@@ -1,9 +1,4 @@
 const divs = document.querySelectorAll('.content')
-const se = document.getElementById('se')
-
-se.addEventListener('click', () => {
-  
-})
 
 divs.forEach(div => {
   div.addEventListener('click', () => {
