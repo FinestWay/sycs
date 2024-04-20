@@ -20,3 +20,14 @@
   white-space: pre-wrap;
 }
 
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#li{
+  text-align: center;
+}

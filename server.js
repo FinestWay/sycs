@@ -1,4 +1,9 @@
 const divs = document.querySelectorAll('.content')
+const se = document.getElementById('se')
+
+se.addEventListener('click', () => {
+  
+})
 
 divs.forEach(div => {
   div.addEventListener('click', () => {
@@ -17,3 +22,5 @@ divs.forEach(div => {
       .catch(error => console.error('Error fetching the file:', error))
   })
 })
+
+
