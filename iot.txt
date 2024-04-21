@@ -1,0 +1,565 @@
+Practical No 1 Aim: Raspberry pi hardware preparation and installation.
+
+Apparatus:
+I.Raspberry pi (latest model)
+II.Monitor or TV
+III.HDMI Cable
+IV.Ethernet Cabel
+V.USB Cable
+VI.USB Mouse
+VII.Micro USB power supply
+VIII.8GB or larger microSD card
+IX.SD Card Reader
+
+Theory:
+1.Raspberry Pi 3 Model B:
+The Raspberry Pi 3 is the third generation Raspberry Pi. It replaced The Raspberry Pi 2 Model B in February 2016. Compare to Raspberry Pi 2 it has:
+⦁	A 1.2GHz 64-bit quad-core ARMv8 CPU
+⦁	802.11n Wireless LAN
+⦁	Bluetooth 4.1
+⦁	Bluetooth Low Energy (BLE) Like the Pi 2, it also has:
+⦁	4 USB Ports
+⦁	40 GPIO Pins
+⦁	Full HDMI Port
+⦁	Ethernet Port
+⦁	Combined 3.5mm audio jack and composite video
+⦁	Camera Interface (CSI)
+⦁	Display interface (DSI)
+⦁	Micro SD card slot (now push-pull rather than push-push)
+⦁	VideoCore IV 3D Graphics Core
+⦁	The Raspberry Pi 3 has an identical form factor to the previous Pi 2 (and Pi 1 Model B+) and has complete compatibility with Raspberry Pi 1 an
+
+2.Monitor or TV:
+A monitor or TV with HDMI in can be used as a display with Raspberry Pi.
+Most modern television sets and monitors having HDMI ports and are easiest to get working with the Raspberry Pi. You can use an HDMI cable to connect the Raspberry Pi directly to the television or monitor. Some older monitors have a DVI port. These worst well with the Raspberry Pi, although you'll need an HDMI-to-DVI cable. Some Old Monitors have a VGA port These Can be Trickier to use as you'll need an HDMI-to-VGA converter, which can change digital video to analogue video. A simple port adapter won't work.
+
+3.HDMI to HDMI Cable:
+Connect Raspberry Pi to a Monitor or TV with an HDMI to HDMI Cable.
+
+4.Ethernet Cable:
+Ethernet Cable will allow your Pi to connect with the internet. It is also useful for the headless setup of Raspberry Pi.
+
+5.USB Keyboard and Mouse:
+Any Standard USB keyboard and Mouse can be used with the Raspberry Pi. A USB keyboard is used to input text into a computer, laptop or a Raspberry Pi. These Plug and play devices will work without any additional driver. Simply plug them into the Raspberry Pi and they should be recognized when it starts Up.
+
+6.Power Supply:
+It is recommended that you use a 5V, 2A USB power supply for all models of
+Raspberry Pi.
+
+7.SD Card:
+SD Card and MicroSD cards are used to store files and software on your
+Raspberry Pi.
+
+Procedure:
+Get Raspbain OS on your MicroSD Card:
+Raspbian comes pre-installed with plenty of software for education, programming and general use. It has Python, Scratch, Sonic Pi, Java, Mathematical and more.
+1.Download Raspbian log on to raspberry pi.org and click on the download, then click on Raspbian and lastly download the RASPBIAN JESSIE WITH DESKTOP files. You can choose either the torrent file or the zip file.
+2.The download file will be in zip format. To unzip the file, you will require an unzip tool. You can use the unzipping tool via WINRAR, 7ZIP etc. After unzipping the file, you will find a disc image file in the unzipped folder.
+3.Now format the SD card before writing the disc image file on the SD card. You can use SD formatter tool any other tool of your wish.
+4.To write the image file of the operating system on the SD card you will require a disk imager tool. For this you can use win32 disk imager tool.
+5.Once the image is written on the SD card, your utility SD card will now have the name boot. Your SD card will now hold the raspbian operating system require for the first time setup.
+Plugging in your Raspbian Pi:
+1.Begin by placing your SD card into the SD card slot on the Raspberry Pi. It will only fit One way.
+2.Next, plug your keyboard and mouse into the USB ports on the Raspberry Pi.
+3.Make sure that your monitor or TV is turned on, and that you have selected the right input reg HDMI 1, DVI, etc.
+4.Connect your HDMI cable from your Raspberry Pi to your monitor or TV.
+5.If you intend to connect your Raspberry Pi to the internet, plug an Ethernet cable into the Ethernet port, or connect a wifi dongle to one of the USB port (unless you have a Rasberry Pi 3).
+6.When you are happy that you have plugged all the cables and SD card in correctly, connect the micro USB power supply. This action will turns on and boot your Raspberry Pi.
+
+____________________________________________________________________________________________________________
+
+Practical No 2
+Aim: Demonstrate Arduino Uno and its pins interfacing with IDE.
+
+Theory:
+The Arduino UNO is a standard board of Arduino. Here UNO means ‘one’ in Italian. It was named as UNO to label the first release of Arduino Software. It was also the first USB board released by Arduino. It is considered as the powerful board used in various projects.
+Arduino.cc developed the Arduino UNO board.
+
+Arduino UNO is based on an ATmega328P microcontroller. It is easy to use compared to other boards, such as the Arduino Mega board, etc. The board consists of digital and analog Input/Output pins (I/O), shields, and other circuits.
+
+The Arduino UNO includes 6 analog pin inputs. 14 digital pins, a USB connector, a power jack, and an ICSP (In-Circuit Serial Programming) header. It is programmed based on IDE. which stands for Integrated Development Environment. It can run on both online and offline platforms.
+The IDE is common to all available boards of Arduino. The Arduino board is shown below:
+
+The List Of Components in details:
+● ATmega328 Microcontroller- It is a single chip Microcontroller of the Atmel family. The processor code inside it is of 8-bit. It combines Memory (SRAM, EEPROM, and Flash), Analog to Digital Converter, SPI Serial ports, I/O lines, registers, timer, external and internal interrupts, and oscillator.
+● ICSP pin- The In-Circuit Serial Programming pin allows the user to program using the firmwave of the Arduino board.
+● Power LED Indicator- The ON status of LED shows the power is activated . When the power is OFF, the LED will not light up.
+
+● Digital I/O pins- The digital pins have the value HIGH or LOW. The Pins numbered from D0 to D13 are digital pins.
+● TX and RX LED’S- The successful flow of data is represented by the lighting of these LED’s.
+● AREF- The Analog Reference (AREF) pin is used to feed a reference voltage to the Arduino UNO board from the external power supply.
+● Reset Button- It is used to add a Reset button to the connection.
+● USB- It allows the board to connect to computer. It is essential for the programming of the Arduino UNO board.
+● Crystal Oscillator- The Crystal Oscillator has a frequency of 16MHz, Which makes the Arduino UNO a Powerful board.
+● Voltage Regulator- The voltage regulator converts the input voltage to 5V.
+● GND- Ground pins. The ground pin acts as a pin with zero voltage.
+● Vin- It is the input voltage.
+● Analog Pins- The pins numbered from A0 TO A5 are analog pins. The function of analog pins is to read the analog sensor used in the connection. It can also act as GPIO(General Purpose Input Output) pins.
+
+________________________________________________________________________________________________________________
+
+Practical 3:
+
+Aim: GPIO:Light the led with python.
+Apparatus:
+I.LED
+II.Resistor
+III.Connecting wires
+IV.Breadboard
+
+Theory:
+GPIO:
+One powerful feature of the Raspberry Pi is the row of GPIO(General Purpose Input/Output) parts along the top edges of the Board.
+These pins are a physical interface between the Pi and the outside world. At the simplest level you can think of them as switches that you can turn on off (input) or that the Pi can turn on or off(output) of the 40 pins, 26 are GPIO pins and the other are power or ground pins.
+Procedure:
+Connect the GPIO 22(that is physical Pin 15) pin in raspberry Pi tone end of the resister.
+Connect another end of resistor to the positive end (anode) of LED. Connect the negative end (cathode) of LED to ground of raspberry Pi. Then power on your Raspberry Pi.
+
+Code:
+
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setmode(GPIO.BCM)
+LedPin = 22
+GPIO.setup(LedPin, GPIO.OUT)
+GPIO.output(LedPin, False)
+
+try:
+    while True:
+        GPIO.output(LedPin, True)
+        print("LED ON")
+        sleep(1)
+        GPIO.output(LedPin, False)
+        print("LED OFF")
+        sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+
+
+________________________________________________________________________________________________________________
+
+Practical No 4
+
+Aim: Camera Connection and Capturing Images.
+
+Apparatus:
+I.Camera Modules
+
+Theory: 
+The Raspberry Pi Camera Board plugs directly into the CSI connector on the Raspberry Pi. The camera is supported in the latest version of Raspbian. The Raspberry Pi’s preferred operating system.
+The Raspberry Pi Camera Board Features:
+1.Fully Compatible with both the Model A and Model B Raspberry Pi.
+2.5MP Omnivision 5647 Camera Module.
+3.Still Picture Resolution: 2592 * 1944.
+4.Video: Supports 1080p @ 30fps, 720p, @ 60fps and 640 * 480p 60/90 Recording.
+5.15-pin MIPI Camera Serial Interface - Plugs Directly into the Raspberry Pi Board.
+6. Size: 20 * 25 * 9mm
+7.Weight 3g
+8.Fully Compatible with many Raspberry Pi cases.
+
+Procedure:
+1.Locate the camera port and connect the camera:
+2.Start up the Pi.
+3.Open the Raspberry Pi Configuration Tool from the main menu.
+4.Ensure the camera software is enabled. If it’s not enabled, enable it and reboot your Pi to begin.
+
+
+Code:
+
+from time import sleep
+from picamera import PiCamera
+
+camera = PiCamera()
+camera.resolution = (1280,720)
+camera.start_preview()
+sleep(2)
+camera.capture('c:/my/image.jpg')
+camera.stop_preview()
+
+
+________________________________________________________________________________________________________________
+
+Practical No 5
+Aim: GPIO: Program the 8x8 LED Grid Module
+Apparatus:
+1.8x8 LED matrix module
+2.7219 driver board
+3.Connecting wires
+Theory:
+8x8 LED matrix Module:
+A LED-Matrix Display is a display device which contains light emitting diodes aligned in the form of matrix.
+This LED matrix displays are used in applications where Symbol.
+Graphic, Characters, Alphabets, Numerals are needed to be displayed together in static as well as Scrolling motion LED Matrix Display is manufactured in various dimensions like 5x7, 8x8, 16x8, 128x16, 128x32 and 128x64 where the numbers represent LED's in rows and columns, respectively. 
+Also, these displays come in different colours such as Red, Green, Yellow, Blue, Orange, White.
+In LED matrix display, multiple LED's are wired together in rows and columns. 
+to minimize the number of pins required to drive them. The matrix pattern is made either in row anode-column cathode or row cathode-column anode pattern. In row anode-column cathode pattern, the entire row is anode while all columns serve as cathode which is shown below and it is vice-versa in row cathode-column anode pattern.
+
+
+________________________________________________________________________________________________________________________
+
+Practical  6:
+
+Aim: Controlling Stepper Motor with Raspberry Pi.
+
+Apparatus:
+1.Stepper Motor
+2.Stepper motor driver 3. Connecting wires
+
+Theory:
+Stepper Motor:
+This is a great first stepper motor, good for small projects and experimenting with steppers. This uni-polar motor has a built in mounting plate with two mounting holes. There are only 32 step (11.25 degree) per revolution, and inside is a 1/16 reduction gear set. (Actually its 1/16.032 but for most purposes 1/16 is a good enough approximation) What this means is that there are really 32*16.032 steps per revolution = 513 steps! The shaft is ﬂattened so it's easy to attach stuff to it with a set-screw.
+
+Technical details:
+1. Unipolar stepper with 0.1" spaced 5-pin cable connector 2. 513 steps per revolution
+3. 1/16.032 geared down reduction 4. 5V DC suggested operation
+5.Weight: 37 g
+6.Dimensions: 28mm diameter, 20mm tall not including 9mm shaft with 5mm diameter 7. 9"/23 cm long cable
+8. Holding Torque: 150 gram-force cm, 15 N*mm/2 oz-force*in 9. Shaft: 5mm diameter ﬂattened
+10. Approx. 42-ohm DC impedance per winding
+
+Code:
+
+import RPi.GPIO as GPIO
+import time
+
+# Set GPIO mode to BOARD
+GPIO.setmode(GPIO.BOARD)
+
+# Define GPIO pins for stepper motor
+stepPin1 = 31
+stepPin2 = 33
+stepPin3 = 35
+stepPin4 = 37
+
+# Setup GPIO pins as output
+GPIO.setup(stepPin1, GPIO.OUT)
+GPIO.setup(stepPin2, GPIO.OUT)
+GPIO.setup(stepPin3, GPIO.OUT)
+GPIO.setup(stepPin4, GPIO.OUT)
+
+# Initialize GPIO outputs to LOW
+GPIO.output(stepPin1, False)
+GPIO.output(stepPin2, False)
+GPIO.output(stepPin3, False)
+GPIO.output(stepPin4, False)
+
+# Function to set stepper motor position
+def singleStep(stepVal1, stepVal2, stepVal3, stepVal4):
+    GPIO.output(stepPin1, stepVal1)
+    GPIO.output(stepPin2, stepVal2)
+    GPIO.output(stepPin3, stepVal3)
+    GPIO.output(stepPin4, stepVal4)
+
+# Function for clockwise rotation
+def clockwiseRotate(delay, steps1):
+    for i in range(0, steps1):
+        singleStep(1, 0, 0, 0)
+        time.sleep(delay)
+        singleStep(0, 1, 0, 0)
+        time.sleep(delay)
+        singleStep(0, 0, 1, 0)
+        time.sleep(delay)
+        singleStep(0, 0, 0, 1)
+        time.sleep(delay)
+
+# Function for anticlockwise rotation
+def anticlockwiseRotate(delay, steps2):
+    for i in range(0, steps2):
+        singleStep(0, 0, 0, 1)
+        time.sleep(delay)
+        singleStep(0, 0, 1, 0)
+        time.sleep(delay)
+        singleStep(0, 1, 0, 0)
+        time.sleep(delay)
+        singleStep(1, 0, 0, 0)
+        time.sleep(delay)
+
+# Set initial position
+singleStep(0, 1, 0, 0)
+
+try:
+    # User input for delay and steps
+    delay = input("Enter delay: ")
+    steps1 = input("How many steps clockwise: ")
+    steps2 = input("How many steps anticlockwise: ")
+
+    # Rotate stepper motor clockwise and anticlockwise
+    clockwiseRotate(int(delay) / 1000.0, int(steps1))
+    anticlockwiseRotate(int(delay) / 1000.0, int(steps2))
+
+finally:
+    # Cleanup GPIO
+    GPIO.cleanup()
+
+
+________________________________________________________________________________________________________________________
+
+Practical 7:
+
+Aim: Node RED: Connect LED to Internet Of Things. 
+
+Theory:
+Node-RED is a drag-and-drop visual tool which comes pre-installed on Raspbian. In this lesson.
+We will use Node-RED to control LEDs via the Raspberry Pi's GPIO pins.
+
+Hardware Guide:
+Along with the basic setup you will require the following components to get started with the.
+Node-RED as follows:
+1.LED
+2.Resistor
+3.Connecting wires
+4.Breadboard
+
+Wiring up the circuit:
+1.Connect the raspberry pi to internet by connecting ethernet cable to the ethernet port or by connecting the on board WIFI module to the router.
+2.Wire up an LED to GPIO17 (i.e. Physical pin11) on your Raspberry Pi.
+
+Software Guide:
+1.Start up your Raspberry Pi. Click on the Raspberry icon, then the Programming menu to open Node-RED.
+2.You should see a window displaying information about Node-RED starting up.
+3. Now go to the Internet menu and open Chromium Web Browser.
+4. In Chromium, locate the address bar at the top and type in localhost:1880, then press Enter. 
+This will display the Node-RED interface. 
+(Your Raspberry Pi does not need to be connected to the internet to use Node-RED: localhost is the address the Raspberry Pi uses to refer to itself and 1880 means that it is looking at port 1880.)
+
+______________________________________________________________________________________________________________________________
+
+Practical No 8
+Aim: Use different types of sensors (LDR, Temperature) with Raspberry Pi/Uno.
+
+Theory:
+The DHT11 is a low-cost and popular sensor for measuring temperature and humidity. The device on the module requires 3 connections to the Raspberry Pi : 3.3V; GND and a GPIO input pin. As the output signal is 3,3V. It can be directly connected to a GPIO input pin of the Raspberry Pi. The temperature range is 0-50°C (+/-2°C) and the humidity range is 20-W% (+/-5%).
+
+Hardware Guide:
+● a breadboard (we are using a 400 points breadboard)
+● a DHT11 or DHT22 temperature and humidity sensor (we are using the DHT11 sensor)
+● Dupont jumper wires
+● a T-cobbler (optional)
+● a 40-pin GPIO cable (optional)
+
+Wiring up the circuit:	
+	● connect the 40-pin cable on the GPIO pins of your Pi (if necessary, remove the cover
+		of your Pi ﬁrst)	
+	● plug the cobbler onto the breadboard as shown in the ﬁgure above or below	
+	● plug the other end of the 40-pin cable in the T-cobbler	
+	● connect the VCC pin of the sensor to the 3,3V pin (red wire)	
+	● connect the OUTPUT pin of the sensor to pin 23 (yellow wire)	
+	● connect the GND of the sensor to a GPIO GND pin (black cable)	
+
+	
+Install the Python libraries:
+The DHT11 sensor communicates with a speciﬁc protocol. Fortunately, we don't have to deal
+with these details and thanks to Adafruit, we can use Python libraries to retrieve the	
+measurements easily. To download the libraries, make sure your Pi has access to the	
+internet. It takes some time to complete the installation of these libraries. But be patient, at
+this time and for so far we are aware, it is the easiest way to let your Pi get the	
+measurements of the DHT11-sensor.	
+
+Prepare the installation of Circuit Python libraries
+To be able to easily communicate with some sensors. Circuit Python has been developed. So, before installing the speciﬁc DHT library, we have to do some preparation work.
+
+Open a terminal window and write the following commands:
+sudo apt update sudo apt full-upgrade
+sudo apt install python3-pip
+sudo pip3 install --upgrade setuptools sudo reboot
+Then install and run a script developed by Adafruit: Sudo pip3 install --upgrade adafruit-python-shell
+blinka.pywget https: raw githubusercontent.com/adafruit Raspberry-Pi-Installer-Scripts master raspiblinka.py
+sudo python3 raspi-blinka.py
+The script will probably ask you to update your python version to Version 3. Choose : y
+
+At the end of the process, you will be asked to reboot. Choose : y
+After the reboot, we are ready to install the DHT library. If you are having any issues, have a look at "Installing CircuitPython Libraries on Raspberry Pi". This Adafruit webpage has more explanations.
+
+Install the Circuit Python-DHT Library
+Open a terminal window and write following commands:
+Install the Circuit Python-DHT Library
+Open a terminal window and write following commands:
+pip3 install adafruit-circuitpython-dht sudo apt-get install libgpiod2
+That's it, the necessary libraries should be installed now. If you need more information, visit "Installing the CircuitPython-DHT Library".
+
+
+Code ==>
+
+import time
+import board
+import adafruit_dht
+import psutil
+
+# Check if a libgpiod process is running and kill it if found
+for proc in psutil.process_iter():
+    if proc.name() == 'libgpiod_pulsein' or proc.name() == 'libgpiod_pulsei':
+        proc.kill()
+
+# Initialize DHT11 sensor
+sensor = adafruit_dht.DHT11(board.D23)
+
+while True:
+    try:
+        # Read temperature and humidity from sensor
+        temp = sensor.temperature
+        humidity = sensor.humidity
+        print("Temperature: {}*C Humidity: {}% ".format(temp, humidity))
+    except RuntimeError as error:
+        print(error.args[0])
+        time.sleep(2.0)
+        continue
+    except Exception as error:
+        sensor.exit()
+        raise error
+    time.sleep(2.0)
+
+________________________________________________________________________________________________________________________
+
+Practical No 9 
+Aim: Setting up a Web Server using Raspberry Pi 
+
+Theory:
+You can use a web server on a Raspberry Pi to host a full website (locally on your network or globally on the internet),
+or just use it to display some information you wish to share to other machines on your network.
+Various web servers are available, with different advantages for usage. 
+Here we will be using Apache web server.
+
+Hardware Guide:
+For completing this lesson, you will require the same hardware that was required for the initial raspberry pi setup except the card reader.
+Here you need to connect your raspberry pi with internet. You can do it by connecting your ethernet cable to the ethernet port or by connecting the raspberry pi to 
+internet wirelessly to router using the on board WIFI module.
+
+Installation Guide:
+Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages
+On its own. Apache can serve HTML ﬁles over HTTP, and with additional modules can serve dynamic web pages using scripting languages such as PHP.
+
+Install Apache:
+First, install the apache2 package by typing the following command into the Terminal: Sudo apt-get install apache2-y
+
+Test the Web Server:
+By default. Apache puts a test HTML ﬁle in the web folder.
+This default web page is served when you browse to http:/ localhost/ on the Pi itself,
+or http:/ XX.XX.XX.XX (whatever the Pi's IP address is) from another computer on the network. 
+To ﬁnd the Pi's IP address, type hostname -1 at the command line.
+
+Changing the default web page:
+This default web page is just a HTML ﬁle on the ﬁlesystem. It is located at
+/var/www/html/index.html
+Navigate to this directory in a terminal window and have a look at what's inside using the following command:
+cd /var/www/html
+By default, there is one ﬁle in /var/www/html/ called index.html and it is owned by the root user (as is the enclosing folder). To edit the ﬁle, you need to change its ownership to your own username. Change the owner of the ﬁle (the default pi user is assumed here) using: sudo chown pi: index.html
+You can now try editing this ﬁle and then refreshing the browser to see the web page change. If you know HTML. you can put your own HTML ﬁles and other assets in this directory and serve them as a website on your local network.
+
+______________________________________________________________________________________________________________________________
+
+Practical No 10
+
+Aim: Interface with any sensor and send its value over the internet to the server using any suitable protocol.
+
+Theory:
+Monitoring temperature and humidity with the help of sensors and display it on webpage. In this practical we are going to use Flask web framework to build a web server inside Raspberry Pi. Flask is a python based web framework. This is used to create and give professional look to web pages. In this web page
+the data will be shown. There will be 2 GPIO switch will be available thought which we will control the GPIO pins of Raspberry Pi. Flask has a lot of ability to build good web apps but in this tutorial we will be using it to build a webpage.
+
+Hardware Guide:
+● Raspberry Pi
+● DHT11 Sensor
+● LED's x 2
+● Resistor 330Ω x 2 (Optional)
+● Jumper cables
+● Breadboard
+
+Wiring up the circuit:
+connect the DHT11 sensor and LED's with Raspberry Pi as shown below.
+
+Software Code:
+There are two parts of code:
+● Python code
+● HTML Code
+In the backend we will use python code to collect data from sensor and control GPIO of the Raspberry Pi. HTML code will be used as a front end or can be named as users interface thorough which user will control the GPIO and get the temperature data shown in a nice looking
+dashboard.
+
+Create a folder named "flask_webserver" and inside this folder create a file named "RPI_webserver.py".
+Now create another folder inside "flask_webserver" folder and name it as "templates". And save main.html file inside templates folder.
+
+RPI_webserver.py
+
+```python
+from flask import Flask, render_template
+import RPi.GPIO as GPIO
+import Adafruit_DHT as dht
+
+app = Flask(__name__)
+
+GPIO.setmode(GPIO.BCM)
+led1 = 21
+led2 = 20
+DHT11_pin = 23
+
+# Set each pin as an output and make it low
+GPIO.setup(led1, GPIO.OUT)
+GPIO.setup(led2, GPIO.OUT)
+
+@app.route("/")
+def main():
+    return render_template('main.html')
+
+# The function below is executed when someone requests a URL. with the pin number and action in it:
+@app.route("/<pin>/<action>")
+def action(pin, action):
+    temperature = ''
+    humidity = ''
+    if pin == "pin1" and action == "on":
+        GPIO.output(led1, GPIO.HIGH)
+    if pin == "pin2" and action == "off":
+        GPIO.output(led1, GPIO.LOW)
+    if pin == "dhtpin" and action == "get":
+        humi, temp = dht.read_retry(dht.DHT11, DHT11_pin)
+        # Reading humidity and temperature
+        humi = '{0:0.1f}'.format(humi)
+        temp = '{0:0.1f}'.format(temp)
+        temperature = 'Temperature:'+temp
+        humidity = 'Humidity:' +humi
+
+    templateData = {
+        'temperature': temperature,
+        'humidity': humidity
+    }
+    return render_template('main.html', **templateData)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80, debug=True)
+
+
+<--Main.html-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Raspberry Pi Webserver</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eojmysd53ii+sco/bjgfsiczc+5ndvn2yr8+0rdqr0ql0h+rp48ckxlpbzkgwra6" crossorigin="anonymous">
+</head>
+<style type="text/css">
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .column {
+        flex: 33%;
+        padding: 10px;
+    }
+</style>
+<body style="background: white;">
+    <h1 align="center" style="color: navy;"><u>Raspberry Pi Webserver</u></h1>
+    <br>
+    <br>
+    <h2 align="center">Click below to get Temperature & Humidity data</h2>
+    <p align="center"><button><a href="/dhtpin/get" style="color: teal;">Click Here</a></button></p>
+    <h4 align="center" style="color: red;">{{temperature}}&deg;C</h4>
+    <h4 align="center" style="color: red;">{{humidity}}RH</h4>
+    <br>
+    <div align="center">
+        <div class="column">
+            <h3 style="color:blue;">Device 1
+                <button>
+                    <button>
+        </div>
+    </div>
+</body>
+</html>
